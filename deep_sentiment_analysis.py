@@ -23,9 +23,7 @@ rcParams['figure.figsize'] = 12, 8
 RANDOM_SEED = 42
 np.random.seed(RANDOM_SEED)
 torch.manual_seed(RANDOM_SEED)
-# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device = torch.device("cpu")
-
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 MAX_LEN = 500
 PRE_TRAINED_MODEL_NAME = 'bert-base-cased'
@@ -107,4 +105,5 @@ while True:
   plt.ylabel('sentiment')
   plt.xlabel('probability')
   plt.xlim([-1, 1]);
+  plt.title("Sentiment label probabilities");
   plt.show()
